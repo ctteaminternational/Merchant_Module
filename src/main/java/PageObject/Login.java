@@ -23,7 +23,7 @@ public class Login extends BaseMethods{
     private By username_Field = By.xpath("//input[@id='emailInput']");
     private By password_Field = By.xpath("//input[@id='passwordInput']");
     private By continue_Button = By.xpath("//button[text()='Continue']");
-    private By loginUsername_Text = By.xpath("//span[text()='Name Surname']");
+    private By loginUsername_Text = By.xpath("//span[text()='aperez@safetypay.com']");
 
 
     /*************************** Page Methods ************************/
@@ -50,6 +50,7 @@ public class Login extends BaseMethods{
     public void validateLogin(){
         boolean username_text = WaitForElementToBeVisible(loginUsername_Text);
         assert username_text;
+
     }
 }
 

@@ -1,6 +1,7 @@
 package PageObject;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -22,7 +23,14 @@ public class BaseMethods {
 
     public void navigateBrowser()
     {
+
         driver.get("http://qaper-secure.safetypay.com/merchantportal/en/");
+    }
+
+    public void goToAmazon()
+    {
+
+        driver.get("http://www.amazon.com.mx");
     }
 
     public void closeBrowser()
@@ -64,5 +72,22 @@ public class BaseMethods {
         }
         boolean element_visible = driver.findElement(by).isDisplayed();
         return element_visible;
+    }
+
+    public String GetElementText(By by)
+    {
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        String element_text = driver.findElement(by).getText();
+        return element_text;
+    }
+
+    public void scrollWindowDown()
+    {
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("window.scrollBy(0,250)");
     }
 }

@@ -8,8 +8,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = ".//Features//Dashboard.feature",
+        features = ".//Features",
         glue= "StepsDefinitions",
+        tags =  "@Demo",
         plugin = { "pretty", "html:target/cucumber-reports" },
         monochrome = true
 )
